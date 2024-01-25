@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/signin-pages.css">
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&family=Roboto&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="height=device-height initial-scale=1" />
+    <meta id="page-identifier" data-identifier="login" />
+</head>
+<body>
+    <div class="content">
+
+        <div class="background-glow color-light-green"></div>
+
+        <!-- Center the div horizontally-->
+        <div class="d-flex flex-top-bottom flex-items-center pd-t-30">
+
+            <!-- Create a container for all items --><!--d-flex flex-top-bottom flex-no-wrap flex-items-center bg-shadow pd-t-30 pd-b-30-->
+            <div class="container login-container load-in">
+                <div class="d-flex flex-justify-center flex-items-center w-max mg-b-15">
+                    <svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24" data-view-component="true" class="back-arrow" data-href="/" fill="white">
+                        <path d="M15.28 5.22a.75.75 0 0 1 0 1.06L9.56 12l5.72 5.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.75.75 0 0 1 1.06 0Z"></path>
+                    </svg>
+                    <h2 class="f-pbs f-c f-white fs-22 mg-a">Login</h2>
+                </div>
+
+                <!-- Container within a container :O -->
+                <ul class="signin-ext-list">
+                    <li class="signin-ext-list-item">
+                        <button class="signin-ext-btn" id="signin-google">
+                            <span class="signin-ext-google signin-ext-img"></span>
+                            <span class="signin-ext-text">Login with Google</span>
+                        </button>
+                    </li>
+                    <li class="signin-ext-list-item">
+                        <button class="signin-ext-btn" id="signin-facebook">
+                            <span class="signin-ext-facebook signin-ext-img"></span>
+                            <span class="signin-ext-text ">Login with Facebook</span>
+                        </button>
+                    </li>
+                    <li class="signin-ext-list-item">
+                        <button class="signin-ext-btn" id="signin-apple">
+                            <span class="signin-ext-apple signin-ext-img"></span>
+                            <span class="signin-ext-text">Login with Apple</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <span class="h-line-behind f-white f-pbs fs-13">or</span>
+                <div class="signin-credentials">
+                    <!-- Email Address input box -->
+                    <label for="log-email" class="signin-label">Email Address</label>
+                    <input type="email" id="log-email" placeholder="Email address" class="text-input h-40 mg-b-10 pd-l-10 f-white">
+
+                    <!-- Password input box-->
+                    <label for="log-password" class="signin-label">Password</label>
+                    <input type="password" id="log-password" placeholder="Password" class="text-input h-40 pd-l-10 f-white">
+                    <span class="password-view"></span>
+
+                    <!-- Password options (Remember me, password forgotten)-->
+                    <div class="d-flex flex-left-right pd-b-10 pd-t-5">
+                        <label for="login-remember-me" class="mg-a">
+                            <input id="login-remember-me" type="checkbox">
+                            <span class="checkbox"></span>
+                        </label>
+                        <span class="f-white f-pbs fs-13 mg-a">Remember me</span>
+                        <a href="../" class="float-right f-white fs-13 link-no-decor f-pbs mg-a">Forgot password?</a>
+                    </div>
+                    <!-- Login button -->
+                    <button id="login-button" class="theme-button f-pbs f-white bg-primary h-30 mg-10 border" onclick="document.getElementById('login-button').classList.add('signin-processing')">Login</button>
+                    <div class="h-line-separator"></div>
+
+                    <!-- Alternative options (Register) -->
+                    <div class="f-pbs f-white fs-13 d-flex flex-justify-evenly">
+                        <span>No account yet?</span>
+                        <a id="reg-button" href="../register/" class="link-no-decor f-white f-pbs">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

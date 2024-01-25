@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Arcade Defender",
+        "url": "http://oege.ie.hva.nl:8080/",
+        "description": "A simple arcade game where you defend your base from incoming enemies.",
+        "software": ["p5", "js", "html", "css"],
+        "thumbnail": "http://localhost:8080/assets/images/arcade_defender.png"
+    },
+    {
+        "title": "Digital Assistant",
+        "url": "https://github.com/VxTi/",
+        "description": "An AI Digital Assistant that can provide users with information.",
+        "software": ["java"],
+        "thumbnail": "http://localhost:8080/assets/images/digital_assistant.png"
+    },
+    {
+        "title": "Portfolio",
+        "url": "",
+        "description": "This portfolio website.",
+        "software": ["nodejs", "js", "html", "css"],
+        "thumbnail": "http://localhost:8080/assets/images/portfolio.png"
+    },
+    {
+        "title": "SSH Browser",
+        "url": "https://github.com/VxTi/SSH-Browser",
+        "description": "A simple SSH browser that allows users to connect to a server via SSH and browse files.",
+        "software": ["electronjs", "nodejs", "js", "html", "css"],
+        "thumbnail": "http://localhost:8080/assets/images/ssh_browser.png"
+    }
+]

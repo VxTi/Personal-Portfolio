@@ -1,0 +1,363 @@
+
+
+:root {
+
+    --menu-height: 70px;
+    --text-size: 20px;
+    --card-border-radius: 10px;
+    --card-margin: 6px;
+    --card-min-width: 200px;
+    --navigator-height: 60px;
+    --transition-time: 0.3s;
+}
+
+.navigator {
+    width: auto;
+    height: var(--navigator-height);
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.navigator-title {
+    width: calc(0.8 * var(--navigator-height));
+    height: calc(0.8 * var(--navigator-height));
+    margin: 0 40px;
+    background-color: #00b;
+    transform-style: preserve-3d;
+    transform: translateX(10px) rotateX(-80deg) rotateZ(45deg);
+    transition: transform var(--transition-time) ease-in-out;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.navigator-title:before {
+    content: '';
+    display: block;
+    transform: translateZ(-10px);
+    width: 100%;
+    height: 100%;
+    background-color: #1c0;
+    transition: transform var(--transition-time) ease-in-out;
+    z-index: 9;
+}
+
+.navigator-title:after {
+    content: '';
+    display: block;
+    transform: translateX(65px) translateZ(-3px);
+    width: 100%;
+    height: 100%;
+    background-color: #b00;
+    z-index: 8;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navigator-title:hover::before {
+    transform: translateZ(20px);
+}
+
+.navigator-title:hover::after {
+    transform: translateZ(-30px) translateX(65px);
+}
+
+
+.navigator-element {
+    padding: 0 10px;
+    margin: 10px 10px;
+    font-family: var(--font-pbs);
+    font-size: 1rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    color: var(--color-text-white);
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+}
+
+.navigator-element.animated {
+    opacity: 1;
+}
+
+.navigator-element:hover {
+    border-color: var(--color-tertiary);
+}
+
+.navigator-text {
+    margin: auto;
+}
+
+.card-container {
+    scroll-margin-top: var(--navigator-height);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    position: relative;
+    margin: 0 13vw 100px;
+    max-width: 74vw;
+    min-width: calc(var(--card-min-width) * 2 + var(--card-margin) * 4);
+    background-color: var(--color-primary);
+    border-radius: calc(var(--card-border-radius) + var(--card-margin));
+}
+
+/*
+ * Cards. These show main information on the website.
+ */
+.card {
+    --card-rotate-x: 0deg;
+    --card-rotate-y: 0deg;
+
+    background-color: var(--color-secondary);
+    position: relative;
+    width: auto;
+    height: 40vh;
+    margin: var(--card-margin);
+    min-width: var(--card-min-width);
+    display: flex;
+    border: 1px solid var(--color-secondary);
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-pbs);
+    font-size: 1.5rem;
+    border-radius: var(--card-border-radius);
+    color: var(--color-text-white);
+    transition: all 0.3s ease-in-out;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+    perspective: 1000px;
+    z-index: 1;
+    scale: 1;
+}
+
+/*
+ * Whenever the user hovers over the card
+ */
+.card:hover {
+    cursor: pointer;
+    scale: 1.01;
+    border: 1px solid var(--color-tertiary);
+}
+
+/*
+ * Whenever the user clicks on the card
+ */
+.card:active {
+    scale: 0.99;
+}
+
+.card:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 3;
+}
+
+.card:after:active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*
+ * Title of the card
+ */
+.card-title {
+    color: white;
+    text-shadow: #000 2px 2px;
+    padding: 20px 0;
+    font-size: 1.7rem;
+    user-select: none;
+}
+
+.card-description {
+    color: white;
+    text-shadow: #000 2px 2px;
+    user-select: none;
+    font-size: 1.2rem;
+    width: fit-content;
+    padding: 20px 30px;
+    background-color: rgba(0.7, 0.7, 0.7, 0.3);
+    border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+}
+
+.profile-picture {
+    width: 14.5rem;
+    height: 14.5rem;
+    display: block;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-picture:hover {
+    transform: scale(1.01);
+}
+
+
+.introduction-title {
+    font-family: var(--font-pbs);
+    font-size: 3rem;
+    color: var(--color-text-white);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.introduction {
+    width: 100vw;
+    height: 100vh;
+    color: var(--color-text-white);
+    font-family: var(--font-pbs);
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    flex-flow: row nowrap;
+}
+
+.software-section {
+    display: flex;
+    position: absolute;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+}
+
+.software-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--card-border-radius);
+    background-color: var(--color-tertiary);
+    opacity: 0.8;
+    margin: 5px;
+    background-position: center;
+    background-size: cover;
+}
+
+.contact {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    transition: border-color var(--transition-time) ease-in-out;
+}
+
+.contact:hover {
+    border-color: var(--color-tertiary);
+}
+
+.github {
+    background-image: url('../assets/images/github_icon.png');
+}
+
+.linkedin {
+    background-image: url('../assets/images/linkedin_icon.png');
+}
+
+.section {
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.bottom {
+    width: 100vw;
+    height: 300px;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.tools {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.languages-title {
+    font-family: var(--font-pbs);
+    font-size: 3rem;
+    color: var(--color-text-white);
+    text-align: center;
+    margin: 50px 0;
+    padding: 0;
+}
+
+.languages {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.programming-languages-container {
+    min-width: 50vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background);
+}
+
+.programming-language {
+    --language-icon-size: 60px;
+    width: var(--language-icon-size);
+    height: var(--language-icon-size);
+    margin: 10px;
+    opacity: 0;
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    background-position: center;
+    background-size: cover;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.programming-language.animated {
+    opacity: 1;
+}
+
+.section-separator {
+    margin: 100px 10vw;
+    width: 80vw;
+    height: 2px;
+    background-color: var(--color-secondary);
+}
+
+.progress-bar {
+    --scroll-percentage: 0;
+    width: calc(80vw * var(--scroll-percentage));
+    height: 2px;
+    background-color: #fff;
+}

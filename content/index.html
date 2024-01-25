@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Portfolio</title>
+		<link rel="stylesheet" href="styles/styles.css">
+		<link rel="stylesheet" href="styles/index.css">
+		<script src="scripts/main.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&family=Roboto&display=swap" rel="stylesheet">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="height=device-height initial-scale=1" />
+	</head>
+
+	<body>
+	<!-- Menu bar section-->
+
+		<div class="content">
+			<div class="navigator">
+				<div class="navigator-title"></div>
+				<div class="navigator-element animate"  data-animation-delay="300" data-scroll-target="section-introduction">
+					<p class="navigator-text" id="navigate-home">Home</p>
+				</div>
+				<div class="navigator-element animate"  data-animation-delay="400" data-scroll-target="section-projects">
+					<p class="navigator-text" id="navigate-projects">Projects</p>
+				</div>
+				<div class="navigator-element animate"  data-animation-delay="500" data-scroll-target="section-languages">
+					<p class="navigator-text" id="navigate-languages">Languages</p>
+				</div>
+				<div class="navigator-element animate"  data-animation-delay="600" data-scroll-target="section-tools">
+					<p class="navigator-text" id="navigate-tools">Tools</p>
+				</div>
+			</div>
+			<div class="section introduction" id="section-introduction">
+				<div>
+					<p class="introduction-title">Luca Warmenhoven</p>
+					<p class="top-section-subtitle">Welcome to my Portfolio.</p>
+				</div>
+				<img src="http://localhost:8080/assets/images/luca.jpg" alt="luca" class="profile-picture">
+			</div>
+
+			<div class="section projects" id="section-projects">
+				<div class="card-container" id="projects"></div>
+			</div>
+
+			<div class="section-separator"></div>
+
+			<div class="section languages" id="section-languages">
+				<div class="languages-title">Languages</div>
+				<div class="programming-languages-container">
+					<div class="programming-language animate" data-image="sw_c.png" data-animation-delay="450" data-reanimate></div>
+					<div class="programming-language animate" data-image="sw_cpp.png" data-animation-delay="500" data-reanimate></div>
+					<div class="programming-language animate" data-image="sw_java.png"  data-animation-delay="550" data-reanimate></div>
+					<div class="programming-language animate" data-image="sw_html.png"  data-animation-delay="600" data-reanimate></div>
+					<div class="programming-language animate" data-image="sw_css.png"  data-animation-delay="650" data-reanimate></div>
+					<div class="programming-language animate" data-image="sw_js.png"  data-animation-delay="700" data-reanimate></div>
+					<div class="programming-language animate" data-image="sw_electronjs.png"  data-animation-delay="750" data-reanimate></div>
+					<div class="programming-language animate" data-image="sw_nodejs.png"  data-animation-delay="800" data-reanimate></div>
+					<div class="programming-language animate" data-image="sw_p5.png"  data-animation-delay="850" data-reanimate></div>
+				</div>
+			</div>
+			<div class="section tools" id="section-tools">
+				<div class="card-container" id="tools"></div>
+			</div>
+			<div class="section bottom">
+				<div class="contact github" title="Visit Github"></div>
+				<div class="contact linkedin" title="Visit LinkedIn"></div>
+			</div>
+		</div>
+	</body>
+</html>

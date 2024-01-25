@@ -1,0 +1,126 @@
+:root {
+    --signin-button-width: 18rem;
+    --signin-button-height: 2.7rem;
+    --signin-image-size: 1.5rem;
+
+    --color-input-invalid: #e91429;
+    --color-input-valid: #008000;
+}
+
+.signin-ext-list {
+    list-style-type: none;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.signin-ext-list-item {
+    display: block;
+}
+
+.signin-ext-btn {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+    height: var(--signin-button-height);
+    width: var(--signin-button-width);
+    border-radius: calc(var(--signin-button-height) / 2);
+    border: var(--border-thickness) solid var(--color-tertiary);
+    background-color: #000;
+    color: var(--color-text-white);
+    transition: background-color var(--transition-duration) ease-in-out;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.signin-ext-btn:hover {
+    background-color: var(--color-tertiary);
+}
+
+.signin-ext-img {
+    width: calc(var(--signin-image-size));
+    height: calc(var(--signin-image-size));
+    margin: 0.5rem;
+}
+
+.signin-ext-google {
+    background: url("https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg") center center no-repeat;
+}
+
+.signin-ext-facebook {
+    background: url("https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg") center center no-repeat;
+}
+
+.signin-ext-apple {
+    background: url("https://accounts.scdn.co/sso/images/new-apple-icon.e356139ea90852da2e60f1ff738f3cbb.svg") center center no-repeat;
+}
+
+.signin-ext-text {
+    text-align: center;
+    margin: auto;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}
+
+.signin-credentials {
+    width: 100%;
+    display: inline-flex;
+    flex-flow: column nowrap;
+}
+
+.signin-label {
+    color: #fff;
+    font-family: var(--font-pbs);
+    font-size: 0.8rem;
+    margin: 8px;
+}
+
+.password-view {
+    display: block;
+    position: absolute;
+}
+
+.text-input-response {
+    content: " ";
+    position: relative;
+    font-family: var(--font-pbs);
+    font-size: 0.8rem;
+    color: var(--color-input-invalid);
+}
+
+.input-box-content-valid {
+    border: var(--color-input-valid) var(--border-thickness) solid;
+}
+
+.input-box-content-invalid {
+    border: var(--color-input-invalid) var(--border-thickness) solid;
+}
+
+.login-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 150px;
+    box-sizing: content-box;
+    width: var(--signin-button-width);
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.7), 0 0 30px 10px rgba(0, 0, 0, 0.19);
+}
+
+.signin-processing {
+    animation: signin-processing-animation 300ms ease-in 1;
+    animation-iteration-count: 1;
+}
+
+@keyframes signin-processing-animation {
+    0% {
+        content: ' ';
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
